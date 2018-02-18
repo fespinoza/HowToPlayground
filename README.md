@@ -2,7 +2,7 @@
 
 ## 3. Write unit tests
 
-Tip taken by john sundell's [Writing unit tests in Swift playgrounds][john-testing-playground]
+Tip taken from john sundell's [Writing unit tests in Swift playgrounds][john-testing-playground] post
 
 ```swift
 import Foundation
