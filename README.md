@@ -1,5 +1,14 @@
 # How to...in playgrounds
 
+## 4. Open a image for macOS
+
+Given an image added to the _Resources_ folder, like `tutorial-01.jpg`, I would open it from a playground like:
+
+```swift
+let fileURL = Bundle.main.url(forResource: "tutorial-01", withExtension: "jpg")!
+let image = NSImage(contentsOf: fileURL)
+```
+
 ## 3. Write unit tests
 
 Tip taken from john sundell's [Writing unit tests in Swift playgrounds][john-testing-playground] post
