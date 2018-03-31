@@ -1,5 +1,31 @@
 # How to...in playgrounds
 
+## 5. Programatically create an instance of NSViewController
+
+Another one for mac, in playgrounds
+
+```swift
+import Cocoa
+import PlaygroundSupport
+
+class MyViewController: NSViewController {
+  override func loadView() {
+    self.view = NSView(
+      frame: CGRect(x: 0, y: 0, width: 300, height: 200)
+    )
+    self.view.wantsLayer = true
+    self.view.layer?.backgroundColor = NSColor.blue.cgColor
+  }
+}
+
+let viewController = MyViewController()
+
+PlaygroundPage.current.liveView = viewController
+```
+
+The important part, is that the method `loadView` must be implemented, as using the empty initializer,
+the code will throw an error missing the view if `loadView` hasn't been implemented
+
 ## 4. Open a image for macOS
 
 Given an image added to the _Resources_ folder, like `tutorial-01.jpg`, I would open it from a playground like:
