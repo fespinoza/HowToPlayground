@@ -1,6 +1,6 @@
 # How to...in playgrounds
 
-## 5. Programatically create an instance of NSViewController
+## 6. Programatically create an instance of NSViewController
 
 Another one for mac, in playgrounds
 
@@ -25,6 +25,14 @@ PlaygroundPage.current.liveView = viewController
 
 The important part, is that the method `loadView` must be implemented, as using the empty initializer,
 the code will throw an error missing the view if `loadView` hasn't been implemented
+
+## 5. Open a image for iOS
+
+Given an image added to the _Resources_ folder, like `tutorial-01.jpg`, I would open it from a playground like:
+
+```swift
+let image = UIImage(named: "tutorial-01.jpg")
+```
 
 ## 4. Open a image for macOS
 
