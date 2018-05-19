@@ -1,5 +1,19 @@
 # How to...in playgrounds
 
+## 7. Use images in markdown
+
+First, you need to add an image to the `Resource` folder of a playground named `design.png`, then from the code, you can simply add:
+
+```swift
+/*:
+  ## Inserting a markdown image
+  
+  ![sample image](design.png)
+*/
+```
+
+and it will render correctly
+
 ## 6. Programatically create an instance of NSViewController
 
 Another one for mac, in playgrounds
