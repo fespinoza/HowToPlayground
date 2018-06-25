@@ -1,5 +1,22 @@
 # How to...in playgrounds
 
+## 8. Decode a JSON file
+
+Useful to provide test data to ViewControllers, when you don't have an internet connection.
+
+Given that you have a `sample-data.json` file in your `Resources` folder
+
+```swift
+import Foundation
+
+guard
+  let jsonFileURL = Bundle.main.url(forResource: "sample-data", withExtension: "json"),
+  let jsonData = try? Data(contentsOf: jsonFileURL),
+  let decodedResult = try? JSONDecoder().decode(MyModel.self, from: jsonData) else {
+    fatalError("coudln't read the file from the main bundle")
+}
+```
+
 ## 7. Use images in markdown
 
 First, you need to add an image to the `Resource` folder of a playground named `design.png`, then from the code, you can simply add:
