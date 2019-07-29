@@ -1,5 +1,33 @@
 # How to...in playgrounds
 
+## 9. Decode a JSON string
+
+In order to create a simple test for your decodable code:
+
+```swift
+import Foundation
+
+// in this case the show name is {"A"-Team}, hence the \\ to espace the {"}
+let jsonString = """
+{
+  "id": "345team",
+  "name": "\\"A\\"-Team",
+}
+"""
+
+struct Show: Decodable {
+  let id: String
+  let name: String
+}
+
+guard let rawData = jsonString.data(using: .utf8),
+  let card = try? JSONDecoder().decode(Show.self, from: rawData) else {
+    fatalError("couldn't parse the Raw JSON string, the json content must be malformed")
+}
+
+print(Show.name)
+```
+
 ## 8. Decode a JSON file
 
 Useful to provide test data to ViewControllers, when you don't have an internet connection.
